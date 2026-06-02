@@ -154,7 +154,7 @@ img {
 /* Content block styles */
 .content-block {
   margin: 24px auto;
-  max-width: 900px;
+  max-width: 1050px;
   padding: 32px 28px;
   background-color: #ffffff;
   border-radius: 24px;
@@ -228,9 +228,9 @@ img {
     height: auto;
     padding: 18px 16px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 12px;
   }
 
@@ -238,15 +238,17 @@ img {
     max-height: 100px;
     width: auto;
     margin: 0;
+    display: none;
   }
 
   .main-nav {
     display: flex;
     gap: 18px;
     margin-left: 0;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex: 1;
   }
 
   .main-nav a,
@@ -255,7 +257,7 @@ img {
   }
 
   .login-link {
-    margin-left: 0;
+    margin-left: auto;
     padding: 8px 16px;
   }
 
