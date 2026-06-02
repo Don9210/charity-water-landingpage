@@ -174,113 +174,117 @@ img {
   border: 1px solid #FFE5A9;
 }
 
+/* Responsive styles */
+@media (max-width: 860px) {
+  .hero {
+    padding: 30px 18px;
+  }
+
+  .hero-copy h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 32px;
+  }
+}
+
 @media (max-width: 640px) {
   body {
     overflow-x: hidden;
   }
 
   .site-header {
-    height: auto !important;
-    padding: 16px 18px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 12px !important;
-  }
-
-  .logo-area {
-    order: 1 !important;
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
+    height: auto;
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
   }
 
   .logo {
-    max-height: 95px !important;
-    width: auto !important;
-    margin: 0 auto !important;
-    display: block !important;
+    max-height: 100px;
+    width: auto;
+    margin: 0;
   }
 
   .main-nav {
-    order: 2 !important;
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 18px !important;
-    margin: 0 !important;
-    flex-wrap: wrap !important;
+    display: flex;
+    gap: 18px;
+    margin-left: 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
-  .main-nav a {
-    font-size: 15px !important;
+  .main-nav a,
+  .login-link {
+    font-size: 15px;
   }
 
   .login-link {
-    order: 3 !important;
-    display: inline-block !important;
-    margin: 0 !important;
-    padding: 8px 16px !important;
-    font-size: 15px !important;
-    text-align: center !important;
+    margin-left: 0;
+    padding: 8px 16px;
   }
 
   .hero {
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 24px 16px 40px !important;
-    gap: 24px !important;
+    flex-direction: column;
+    padding: 24px 16px 40px;
+    gap: 24px;
   }
 
   .hero-image,
   .hero-copy {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    flex: none !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: none;
   }
 
   .hero-image img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .hero-copy {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-copy .eyebrow {
-    font-size: 30px !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
+    font-size: 30px;
+    line-height: 1.1;
+    text-align: center;
   }
 
   .hero-copy h1 {
-    font-size: 32px !important;
-    line-height: 1.1 !important;
-    text-align: center !important;
+    font-size: 32px;
+    line-height: 1.1;
+    text-align: center;
   }
 
   .hero-copy p {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-    text-align: center !important;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
   }
 
-  .hero-copy .cta-button,
   .cta-button {
-    display: inline-block !important;
-    align-self: center !important;
-    width: auto !important;
-    max-width: 90% !important;
-    margin: 24px auto 0 auto !important;
-    text-align: center !important;
+    display: inline-block;
+    width: auto;
+    max-width: 90%;
+    margin: 24px auto 0;
+    text-align: center;
+    align-self: center;
+  }
+
+  .content-block {
+    margin: 18px 16px;
+    padding: 24px 20px;
   }
 }
