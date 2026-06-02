@@ -1,10 +1,21 @@
 /* Page font and brand palette */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Proxima Nova', Arial, sans-serif;
-  background-color: #FFF7E7; /* Soft cream background */
-  color: #121212; /* Dark text for strong contrast */
+  background-color: #FFF7E7;
+  color: #121212;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Header with logo and navigation */
@@ -18,8 +29,13 @@ body {
   border-bottom: 1px solid #F1E5CD;
 }
 
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
-  max-height: 250px;
+  max-height: 60px;
   display: block;
   margin-right: 50px;
 }
@@ -46,16 +62,10 @@ body {
 
 .login-link {
   margin-left: auto;
-}
-
-.login-link {
   font-size: 1rem;
   text-decoration: none;
   color: #121212;
   font-weight: 600;
-}
-
-.login-link {
   padding: 10px 16px;
   border-radius: 999px;
   border: 1px solid transparent;
@@ -93,7 +103,6 @@ body {
 .hero-copy {
   flex: 1 1 320px;
   min-width: 280px;
-  max-width: 480px;
 }
 
 .hero-copy .eyebrow {
@@ -117,7 +126,6 @@ body {
   font-size: 1.25rem;
   line-height: 1.8;
   margin: 0 0 28px;
-  max-width: 520px;
 }
 
 .cta-button {
@@ -166,8 +174,8 @@ body {
   border: 1px solid #FFE5A9;
 }
 
-/* Responsive styles */
-@media (max-width: 860px) {
+/* Tablet - 768px 이하 */
+@media (max-width: 768px) {
   .hero {
     padding: 30px 18px;
   }
@@ -175,31 +183,460 @@ body {
   .hero-copy h1 {
     font-size: 2.4rem;
   }
+
+  .hero-copy .eyebrow {
+    font-size: 32px;
+  }
 }
 
-@media (max-width: 640px) {
+/* Mobile - 480px 이하 */
+@media (max-width: 480px) {
+  /* 헤더 */
   .site-header {
+    height: auto;
+    padding: 12px 16px;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 10px;
+  }
+
+  .logo-area {
+    width: 100%;
     justify-content: center;
-    text-align: center;
+  }
+
+  .logo {
+    max-height: 40px;
+    margin-right: 0;
   }
 
   .main-nav {
+    order: 3;
+    gap: 15px;
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+  }
+
+  .login-link {
+    order: 2;
+    margin-left: 0;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  /* 히어로 섹션 */
+  .hero {
+    flex-direction: column;
+    padding: 16px 12px;
+    gap: 20px;
+  }
+
+  .hero-image {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .hero-copy {
+    flex: none;
+    width: 100%;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 18px;
+    margin: 0 0 10px;
+  }
+
+  .hero-copy h1 {
+    font-size: 24px;
+    margin: 0 0 12px;
+  }
+
+  .hero-copy p {
+    font-size: 14px;
+    margin: 0 0 16px;
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    margin: 16px 0 0;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  /* 콘텐츠 블록 */
+  .content-block {
+    margin: 12px auto;
+    max-width: 100%;
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+
+  .content-block h2 {
+    font-size: 20px;
+    margin: 0 0 10px;
+  }
+
+  .content-block p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* 최종 모바일 override - 680px 이하 강제 적용 */
+@media (max-width: 680px) {
+  /* 헤더 레이아웃 고정 */
+  .site-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    height: auto !important;
+    padding: 8px 16px !important;
+    gap: 8px !important;
+    background-color: #ffffff;
+    border-bottom: 1px solid #F1E5CD;
+    position: relative;
+    z-index: 100;
+  }
+
+  /* 로고만 한 줄 */
+  .logo-area {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 8px;
+  }
+
+  .logo {
+    max-height: 35px !important;
+    margin-right: 0 !important;
+  }
+
+  /* 배너 한 줄 (flex wrap으로 자동 정렬) */
+  .main-nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .main-nav a {
+    font-size: 13px !important;
+    padding: 6px 8px !important;
+    white-space: nowrap;
+  }
+
+  /* 로그인 한 줄에 포함 */
+  .login-link {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+    margin-left: 0 !important;
+  }
+
+  /* 히어로 섹션 - 이미지 아래로 */
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    padding: 12px !important;
+    gap: 16px !important;
+    background-color: #FFF7E7;
+    margin-top: 0 !important;
+  }
+
+  .hero-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    order: 1;
+    margin-top: 0;
+  }
+
+  .hero-image img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    display: block;
+  }
+
+  .hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    order: 2;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 16px !important;
+    margin: 0 0 8px !important;
+  }
+
+  .hero-copy h1 {
+    font-size: 22px !important;
+    margin: 0 0 10px !important;
+  }
+
+  .hero-copy p {
+    font-size: 13px !important;
+    margin: 0 0 12px !important;
+  }
+
+  .cta-button {
+    width: 100% !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+    margin: 12px 0 0 !important;
+  }
+
+  .content-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px !important;
+    margin: 8px auto !important;
+  }
+
+  .content-block h2 {
+    font-size: 18px !important;
+    margin: 0 0 8px !important;
+  }
+
+  .content-block p {
+    font-size: 13px !important;
+  }
+}
+
+/* 모바일 640px 이하 - 핵심 문제 해결 */
+@media (max-width: 640px) {
+  .site-header {
+    height: auto;
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logo {
+    max-height: 70px;
+    margin-right: 0;
+  }
+
+  .main-nav {
+    gap: 18px;
+    margin-left: 0;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .login-link {
+    margin-left: 0;
+    padding: 8px 12px;
   }
 
   .hero {
     flex-direction: column;
-    padding: 22px 16px;
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  .hero-image,
+  .hero-copy {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
   }
 
   .hero-copy h1 {
-    font-size: 2rem;
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .hero-copy p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
   }
 
   .content-block {
-    padding: 24px 20px;
+    margin: 18px 16px;
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+}
+
+/* 최종 강제 override - 640px 이하 */
+@media (max-width: 640px) {
+  .site-header {
+    height: auto;
+    padding: 12px 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    max-height: 55px;
+    width: auto;
+    margin-right: 0;
+  }
+
+  .main-nav {
+    gap: 14px;
+    margin-left: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .main-nav a,
+  .login-link {
+    font-size: 0.9rem;
+  }
+
+  .login-link {
+    margin-left: 0;
+    padding: 6px 10px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 20px;
+  }
+
+  .hero-image,
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: none;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+  }
+
+  .hero-copy h1 {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .hero-copy p {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    padding: 14px 18px;
+  }
+
+  .content-block {
+    margin: 18px 16px;
+    padding: 22px 18px;
+  }
+}
+
+/* 모바일 헤더 최적화 - 640px 이하 */
+@media (max-width: 640px) {
+  .site-header {
+    height: auto;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    max-height: 42px;
+    width: auto;
+    margin-right: 0;
+  }
+
+  .main-nav,
+  .login-link {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 24px 16px 36px;
+    gap: 24px;
+  }
+
+  .hero-image,
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: none;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 18px;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-copy h1 {
+    font-size: 30px;
+  }
+
+  .hero-copy p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 280px;
+    margin: 24px auto 0;
+    text-align: center;
   }
 }
