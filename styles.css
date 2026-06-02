@@ -85,12 +85,15 @@ img {
   gap: 32px;
   padding: 40px 24px;
   background-color: #FFF7E7;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero-image {
   flex: 1 1 420px;
   min-width: 280px;
   max-width: 640px;
+  margin: 0 auto;
 }
 
 .hero-image img {
@@ -103,6 +106,7 @@ img {
 .hero-copy {
   flex: 1 1 320px;
   min-width: 280px;
+  text-align: center;
 }
 
 .hero-copy .eyebrow {
